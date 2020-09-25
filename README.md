@@ -15,3 +15,5 @@
 ![](https://images.velog.io/images/hemtory/post/e787b5c6-6ec5-43cb-99c5-e03a2ec322a8/KakaoTalk_20200924_163718630_04.jpg)
 ### 4. List에서 제거 <br />
 ![](https://images.velog.io/images/hemtory/post/38e24e48-f439-4956-b741-45515fc4cabb/KakaoTalk_20200924_163718630_05.jpg)
+### 5. 완료 목록 줄 긋기 <br />
+![](https://images.velog.io/images/hemtory/post/b20362f6-acdd-480d-9fa9-7d2f99ea5bbe/KakaoTalk_20200925_202437803.jpg)
