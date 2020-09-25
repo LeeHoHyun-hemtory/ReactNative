@@ -3,16 +3,16 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, TextInput} from 'react-native';
 import Todo from './Todo';
 
-type item = {
+interface Item  {
   id: number;
-  todo: string
+  todo: string;
+  isImportant?: boolean;
 };
 
-type itemList = item[]
-
+// const item: Item[] = [{id:0,todo:"할일",isImportant:false},{id:0,todo:"할일",isImportant:false}]
 
 export default function App() {
-  const [list, setList] = useState<itemList>([]);
+  const [list, setList] = useState<Item[]>([]);
   const [todo, setTodo] = useState('');
   const [id, setId] = useState(1);
 
@@ -22,7 +22,7 @@ export default function App() {
 
   const onPressAdd = () => {
     if(todo){
-      const newArr = [ ...list, { id, todo } ]
+      const newArr = list.concat({ id, todo })
       setList(newArr);
       setTodo('');
       setId(id + 1);
@@ -48,7 +48,7 @@ export default function App() {
         </TouchableOpacity>
       </View>
       <View style={{marginTop: 30}}>
-        {list.map((el: item) => <Todo key={el.id} todo={el.todo} onPressRemove={onPressRemove} id={el.id} />)}
+        {list.map((el: Item) => <Todo key={el.id} todo={el.todo} onPressRemove={onPressRemove} id={el.id} />)}
       </View>
       <StatusBar style="auto" />
     </View>

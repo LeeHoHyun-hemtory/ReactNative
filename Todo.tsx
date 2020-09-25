@@ -3,16 +3,16 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
 export default function App(props: any) {
   const { id, todo, onPressRemove } = props;
-  const [done, setDone] = useState(false);
+  const [done, setDone] = useState<boolean>(false);
 
   const onPressToggle = () => {
     setDone(!done);
   }
 
   return (
-    <View key={id} style={styles.todo}>
+    <View key={id} style={ styles.todo }>
       <TouchableOpacity onPress={onPressToggle}>
-        <Text style={styles.list}>{todo}</Text>
+        <Text style={[styles.list, done && styles.finish]}>{todo}</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => onPressRemove(id)} style={[styles.flexCenter, styles.btnRemove]}>
         <Text style={styles.RemoveFont}>삭제</Text>
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'pink', 
     marginTop: 20
   },
-  done: {
+  finish: {
     textDecorationLine: 'line-through',
     textDecorationColor: 'pink',
     color: '#888'
